@@ -114,7 +114,7 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: Get.height*0.07,
+                height: Get.height*0.1,
                 child: Center(
                   child: ElevatedButton(onPressed: (){}, child:
                   Row(children: [
