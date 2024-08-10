@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // Import GetX if you're using it for navigation
 import 'package:intl_phone_field/intl_phone_field.dart';
-// Import the package
 
 class EnterYourMobile extends StatefulWidget {
   const EnterYourMobile({super.key});
@@ -62,6 +61,7 @@ class _EnterYourMobileState extends State<EnterYourMobile> {
             ),
             SizedBox(height: 10),
             IntlPhoneField(
+              focusNode: _focusNode, // Attach the focus node here
               showDropdownIcon: false,
               disableLengthCheck: true,
               decoration: InputDecoration(
