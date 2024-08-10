@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // Import GetX if you're using it for navigation
+import 'package:intl_phone_field/intl_phone_field.dart';
+// Import the package
 
 class EnterYourMobile extends StatefulWidget {
   const EnterYourMobile({super.key});
@@ -9,14 +11,12 @@ class EnterYourMobile extends StatefulWidget {
 }
 
 class _EnterYourMobileState extends State<EnterYourMobile> {
-  // FocusNode to manage the focus state of the TextFormField
   final FocusNode _focusNode = FocusNode();
   bool _isButtonVisible = false;
 
   @override
   void initState() {
     super.initState();
-    // Add a listener to the FocusNode to update the button visibility
     _focusNode.addListener(() {
       setState(() {
         _isButtonVisible = _focusNode.hasFocus;
@@ -26,7 +26,7 @@ class _EnterYourMobileState extends State<EnterYourMobile> {
 
   @override
   void dispose() {
-    _focusNode.dispose(); // Dispose the FocusNode when the widget is removed
+    _focusNode.dispose();
     super.dispose();
   }
 
@@ -61,32 +61,49 @@ class _EnterYourMobileState extends State<EnterYourMobile> {
               ),
             ),
             SizedBox(height: 10),
-            TextFormField(
-              focusNode: _focusNode, // Attach the FocusNode to the TextFormField
-              keyboardType: TextInputType.phone,
+            IntlPhoneField(
+              showDropdownIcon: false,
+              disableLengthCheck: true,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: "Enter your mobile number",
-                contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+                contentPadding: EdgeInsets.symmetric(vertical: 25, horizontal: 12),
+                hintText: "    Enter your mobile number",
+                hintStyle: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                  color: Color(0xff303030),
+                ),
+                border: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue),
+                ),
               ),
+              initialCountryCode: 'IN', // Correct parameter for initial country code
+              onChanged: (phone) {
+                // Print the complete number or use it as needed
+                print(phone.completeNumber);
+              },
             ),
-            SizedBox(height: 20), // Space between the TextFormField and the button
+            SizedBox(height: 20),
             if (_isButtonVisible)
               Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
                   onTap: () {
-
+                    // Handle the navigation action here
                   },
                   child: CircleAvatar(
-                    radius: 33.5, // This sets the width and height to 67
+                    radius: 33.5,
                     backgroundColor: Color(0xff53B175),
                     child: Icon(
                       Icons.arrow_forward_ios,
                       color: Colors.white,
                     ),
-                  )
-
+                  ),
                 ),
               ),
           ],
@@ -95,6 +112,3 @@ class _EnterYourMobileState extends State<EnterYourMobile> {
     );
   }
 }
-
-// Example next screen (replace with your actual screen)
-
