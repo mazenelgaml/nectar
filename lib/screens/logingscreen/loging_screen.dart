@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_utils/get_utils.dart';
+import 'package:nectar/widgets/background_widget/custom_background_widget.dart';
 
 import '../widgets/custombottom/custom_button.dart';
 
@@ -18,9 +21,8 @@ class _LogingScreenState extends State<LogingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        margin: EdgeInsets.only(left: 10,right: 10),
-        child: Column(
+      body:CustomBackgroundWidget(
+        page: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

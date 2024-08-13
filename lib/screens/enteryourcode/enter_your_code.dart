@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; // Import GetX if you're using it for navigation
+import 'package:get/get.dart';
+
+import '../../widgets/background_widget/custom_background_widget.dart'; // Import GetX if you're using it for navigation
 
 class EnterYourCode extends StatefulWidget {
   const EnterYourCode({super.key});
@@ -55,103 +57,107 @@ class _EnterYourCodeState extends State<EnterYourCode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0, // Removes the shadow
         leading: BackButton(),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: Text(
-                "Enter your 4-digit code",
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 28,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-            SizedBox(height: 15),
-            Text(
-              "Code",
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-                color: Color(0xff7C7C7C),
-              ),
-            ),
-            SizedBox(height: 10),
-            TextFormField(
-              focusNode: _focusNode,
-              keyboardType: TextInputType.phone,
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(vertical: 25, horizontal: 12),
-                hintText: "Code",
-                hintStyle: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: Color(0xff303030),
-                ),
-                border: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.transparent),
-                ),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blue),
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            if (_isButtonVisible)
-              Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {
-                    // Handle the navigation action here
-                  },
-                  child: CircleAvatar(
-                    radius: 33.5,
-                    backgroundColor: Color(0xff53B175),
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.white,
-                    ),
+      body: CustomBackgroundWidget(
+        page: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Text(
+                  "Enter your 4-digit code",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 28,
+                    color: Colors.black,
                   ),
                 ),
               ),
-            SizedBox(height: 20),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: _isResendEnabled ? startTimer : null,
-                    child: Text(
-                      "Resend Code",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        color: _isResendEnabled ? Color(0xff53B175) : Color(0xff7C7C7C),
+              SizedBox(height: 15),
+              Text(
+                "Code",
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                  color: Color(0xff7C7C7C),
+                ),
+              ),
+              SizedBox(height: 10),
+              TextFormField(
+                focusNode: _focusNode,
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 25, horizontal: 12),
+                  hintText: "Code",
+                  hintStyle: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    color: Color(0xff303030),
+                  ),
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.transparent),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              if (_isButtonVisible)
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: GestureDetector(
+                    onTap: () {
+                      // Handle the navigation action here
+                    },
+                    child: CircleAvatar(
+                      radius: 33.5,
+                      backgroundColor: Color(0xff53B175),
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.white,
                       ),
                     ),
                   ),
-                  SizedBox(height: 5), // Add spacing between the text and the countdown
-                  Text(
-                    _start > 0 ? "$_start seconds" : "0 seconds",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                      color: Color(0xff7C7C7C),
+                ),
+              SizedBox(height: 20),
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: _isResendEnabled ? startTimer : null,
+                      child: Text(
+                        "Resend Code",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          color: _isResendEnabled ? Color(0xff53B175) : Color(0xff7C7C7C),
+                        ),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            )
+                    SizedBox(height: 5), // Add spacing between the text and the countdown
+                    Text(
+                      _start > 0 ? "$_start seconds" : "0 seconds",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: Color(0xff7C7C7C),
+                      ),
+                    ),
+                  ],
+                ),
+              )
 
-          ],
+            ],
+          ),
         ),
       ),
     );
