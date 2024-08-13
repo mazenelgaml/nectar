@@ -49,7 +49,6 @@ class SignInScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-
                       width: Get.width*0.85,
                       child: IntlPhoneField(
                         showDropdownIcon: false,
