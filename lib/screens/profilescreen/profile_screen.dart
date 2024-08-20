@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-class ProfileScreen extends StatelessWidget {
+import '../../widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
+
+class ProfileScreen extends StatefulWidget {
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   final List<Map<String, String>> items = [
     {'image': 'assets/images/Orders icon.png', 'title': 'Order'},
     {'image': 'assets/images/My Details icon.png', 'title': 'My Details'},
@@ -16,9 +23,11 @@ class ProfileScreen extends StatelessWidget {
     {'image': 'assets/images/help icon.png', 'title': 'Help'},
     {'image': 'assets/images/about icon.png', 'title': 'About'},
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: CustomBottomNavigationBar(selectedIndex: 4,),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -76,7 +85,7 @@ class ProfileScreen extends StatelessWidget {
             endIndent: 16.0,
           ),
           Container(
-            height: Get.height * 0.7,
+            height: Get.height * 0.65,
             child: ListView.builder(
               itemCount: items.length,
               physics: NeverScrollableScrollPhysics(),
@@ -90,8 +99,10 @@ class ProfileScreen extends StatelessWidget {
                         onTap: () {
                           print("22");
                         },
-                        highlightColor: Colors.transparent, // Makes the highlight color transparent
-                        splashColor: Colors.transparent,   // Makes the splash color transparent
+                        highlightColor: Colors.transparent,
+                        // Makes the highlight color transparent
+                        splashColor: Colors.transparent,
+                        // Makes the splash color transparent
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -139,7 +150,6 @@ class ProfileScreen extends StatelessWidget {
               },
             ),
           ),
-
           Container(
             height: Get.height * 0.1,
             child: Center(
