@@ -316,7 +316,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                       style: TextStyle(
                                         fontWeight: FontWeight.w800,
                                         fontSize: 16,
-                                        color: Colors.,
+                                        color: Colors.black,
                                       ),
                                       recognizer: TapGestureRecognizer()..onTap = () {
                                       },
