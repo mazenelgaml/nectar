@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nectar/screens/filter/filter_screen.dart';
+import 'package:nectar/widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 
 import '../../widgets/search_widget/search_widget.dart';
 
@@ -34,6 +35,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: CustomBottomNavigationBar(selectedIndex: 1,),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -91,7 +93,7 @@ class _SearchScreenState extends State<SearchScreen> {
           Container(
             margin: EdgeInsets.only(left: 10),
             width: Get.width * 0.95,
-            height: Get.height-100,
+            height: Get.height-155,
             child: GridView.builder(
               itemCount: 6,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
