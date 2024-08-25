@@ -32,6 +32,7 @@ class GroceriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(left: 10,right: 10,bottom: 5),
       width: 173.32,
       height: 248.51,
       decoration: BoxDecoration(
@@ -39,7 +40,7 @@ class GroceriesWidget extends StatelessWidget {
         color: Colors.transparent,
         border: Border.all(
           color: Colors.grey,
-          width: 0.2,
+          width: 0.5,
         ),
       ),
       child: Column(
@@ -85,6 +86,7 @@ class GroceriesWidget extends StatelessWidget {
           SizedBox(height: 4),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 price[index],

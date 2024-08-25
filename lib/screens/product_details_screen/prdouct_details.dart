@@ -45,6 +45,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
+
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 30),
@@ -75,195 +76,234 @@ class _ProductDetailsState extends State<ProductDetails> {
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Naturel Red Apple",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w800,
-                      color: Color(0xff181725),
-                    ),
-                  ),
-                  Text(
-                    "1kg, Price",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff7C7C7C),
-                    ),
-                  ),
-                ],
-              ),
-              IconButton(
-                icon: Icon(Icons.favorite_border),
-                onPressed: () {
-                  Get.back();
-                },
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: _decreaseQuantity,
-                    icon: Icon(Icons.remove, color: Colors.green),
-                  ),
-                  Container(
-                    width: 45,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(17),
-                      border: Border.all(color: Colors.grey),
-                    ),
-                    child: Center(
-                      child: Text(
-                        '$_quantity',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+          Container(
+            margin: EdgeInsets.only(left: 8),
+            width: Get.width*0.96,
+            height: Get.height-400,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Naturel Red Apple",
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff181725),
+                          ),
                         ),
+                        Text(
+                          "1kg, Price",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff7C7C7C),
+                          ),
+                        ),
+                      ],
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.favorite_border),
+                      onPressed: () {
+                        Get.back();
+                      },
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: _decreaseQuantity,
+                          icon: Icon(Icons.remove, color: Colors.green),
+                        ),
+                        Container(
+                          width: 45,
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(17),
+                            border: Border.all(color: Colors.grey),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '$_quantity',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: _increaseQuantity,
+                          icon: Icon(Icons.add, color: Colors.green),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      '\$${totalPrice.toStringAsFixed(2)}',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w800,
+                        color: Color(0xff181725),
                       ),
                     ),
-                  ),
-                  IconButton(
-                    onPressed: _increaseQuantity,
-                    icon: Icon(Icons.add, color: Colors.green),
-                  ),
-                ],
-              ),
-              Text(
-                '\$${totalPrice.toStringAsFixed(2)}',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w800,
-                  color: Color(0xff181725),
+                  ],
                 ),
-              ),
-            ],
-          ),
-          Divider(
-            color: Colors.grey,
-            thickness: 0.5,
-            indent: 16,
-            endIndent: 16,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Product Detail",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w800,
-                  color: Color(0xff181725),
-                ),
-              ),
-              IconButton(
-                icon: Icon(Icons.navigate_next_outlined),
-                onPressed: () {
-                  Get.back();
-                },
-              ),
-            ],
-          ),
-          Divider(
-            color: Colors.grey,
-            thickness: 0.5,
-            indent: 16,
-            endIndent: 16,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Nutritions",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w800,
-                  color: Color(0xff181725),
-                ),
-              ),
-              Row(
-                children: [
-                  Container(
-                    width: 33.61,
-                    height: 27,
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(color: Colors.grey),
-                    ),
-                    child: Center(
-                      child: Text(
-                        '100gr',
-                        style: TextStyle(
-                          fontSize: 9,
-                          fontWeight: FontWeight.bold,
+                Container(
+                  height: Get.height*0.25,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Center(
+                        child: Container(
+                          width: Get.width*0.99,
+                          height: 1,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                          ),
+
                         ),
                       ),
-                    ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Product Detail",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff181725),
+                            ),
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.navigate_next_outlined),
+                            onPressed: () {
+                              Get.back();
+                            },
+                          ),
+                        ],
+                      ),
+                      Center(
+                        child: Container(
+                          width: Get.width*0.99,
+                          height: 1,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                          ),
+
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Nutritions",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff181725),
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 33.61,
+                                height: 27,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  borderRadius: BorderRadius.circular(5),
+                                  border: Border.all(color: Colors.grey),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '100gr',
+                                    style: TextStyle(
+                                      fontSize: 9,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              IconButton(
+                                icon: Icon(Icons.navigate_next_outlined),
+                                onPressed: () {
+                                  Get.back();
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Center(
+                        child: Container(
+                          width: Get.width*0.99,
+                          height: 1,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                          ),
+
+                        ),
+                      ),
+                      Row(
+
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Review",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff181725),
+                            ),
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(top: 10),
+                                width: 150,
+                                height: 10,
+                                child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: 5,
+                                  itemBuilder: (context, index) {
+                                    return
+                                     Icon(Icons.star, color: Color(0xffF3603F),size: 28,);
+
+
+                                  },
+                                ),
+                              ),
+                              IconButton(
+                                icon: Icon(Icons.navigate_next_outlined),
+                                onPressed: () {
+                                  Get.back();
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  IconButton(
-                    icon: Icon(Icons.navigate_next_outlined),
-                    onPressed: () {
-                      Get.back();
-                    },
+                ),
+                Center(
+                  child: CustomButton(
+                    onPressed: () {},
+                    text: 'Add To Basket',
                   ),
-                ],
-              ),
-            ],
-          ),
-          Divider(
-            color: Colors.grey,
-            thickness: 0.5,
-            indent: 16,
-            endIndent: 16,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Review",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w800,
-                  color: Color(0xff181725),
                 ),
-              ),
-              Container(
-                width: 0,
-                height: 10,
-                child: ListView.builder(
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return IconButton(
-                      icon: Icon(Icons.star, color: Colors.green),
-                      onPressed: () {},
-                    );
-                  },
-                ),
-              ),
-              IconButton(
-                icon: Icon(Icons.navigate_next_outlined),
-                onPressed: () {
-                  Get.back();
-                },
-              ),
-            ],
-          ),
-          Center(
-            child: CustomButton(
-              onPressed: () {},
-              text: 'Add To Basket',
+              ],
             ),
           ),
         ],
