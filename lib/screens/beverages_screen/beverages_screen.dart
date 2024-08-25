@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:nectar/screens/filter/filter_screen.dart';
 
 import '../../widgets/Beverages_widget/Beverages_widget.dart';
 import '../../widgets/food_container_widget/food_container_widget.dart';
@@ -21,7 +22,9 @@ class BeveragesScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: Image.asset('assets/images/Group 6839.png'),
-            onPressed: () {},
+            onPressed: () {
+              Get.to(()=>FilterScreen());
+            },
           ),
         ],
       ),

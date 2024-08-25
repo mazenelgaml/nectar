@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nectar/screens/filter/filter_screen.dart';
 
 import '../../widgets/search_widget/search_widget.dart';
 
@@ -36,12 +37,15 @@ class _SearchScreenState extends State<SearchScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Center(
-                child: Container(
-                  margin: EdgeInsets.only(left: 10),
+          Container(
+            height: Get.height*0.11,
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 10,top: 15),
                   width: 324.82,
                   child: TextFormField(
                     controller: _controller,
@@ -75,12 +79,14 @@ class _SearchScreenState extends State<SearchScreen> {
                     ),
                   ),
                 ),
-              ),
-              IconButton(
-                icon: Image.asset('assets/images/Group 6839.png'),
-                onPressed: () {},
-              ),
-            ],
+                IconButton(
+                  icon: Image.asset('assets/images/Group 6839.png'),
+                  onPressed: () {
+                    Get.to(()=>FilterScreen());
+                  },
+                ),
+              ],
+            ),
           ),
           Container(
             margin: EdgeInsets.only(left: 10),
