@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_utils/get_utils.dart';
+import 'package:nectar/screens/home_Screen/home_screen.dart';
+import 'package:nectar/screens/signupscreen/signup_screen.dart';
 import 'package:nectar/widgets/background_widget/custom_background_widget.dart';
 
 import '../widgets/custombottom/custom_button.dart';
@@ -173,7 +175,9 @@ class _LogingScreenState extends State<LogingScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(child: CustomButton(onPressed: () {  }, text: 'Log in',)),
+                Center(child: CustomButton(onPressed: () {
+                  Get.to(()=>HomeScreen());
+                }, text: 'Log in',)),
                 Text(
                   "Don’t have an account? ",
                   style: TextStyle(
@@ -183,14 +187,19 @@ class _LogingScreenState extends State<LogingScreen> {
                   ),
                   textAlign: TextAlign.left,
                 ),
-                Text(
-                  "Singup ",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w800,
-                    fontSize: 15,
-                    color: Color(0xff53B175),
+                TextButton(
+                  onPressed: (){
+                    Get.to(()=>SignupScreen());
+                  },
+                  child: Text(
+                    "SingUp ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 15,
+                      color: Color(0xff53B175),
+                    ),
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
               ],
             ),

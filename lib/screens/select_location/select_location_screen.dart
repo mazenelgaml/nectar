@@ -1,6 +1,7 @@
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nectar/screens/home_Screen/home_screen.dart';
 
 import '../../widgets/background_widget/custom_background_widget.dart';
 
@@ -212,7 +213,9 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
               ),
             ),
             Center(
-              child: ElevatedButton(onPressed: (){},
+              child: ElevatedButton(onPressed: (){
+                Get.to(()=>HomeScreen());
+              },
                   child: Center(child: Text("Submit",
                   style: TextStyle(
                     color: Colors.white,

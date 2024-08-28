@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nectar/screens/select_location/select_location_screen.dart';
 
 import '../../widgets/background_widget/custom_background_widget.dart'; // Import GetX if you're using it for navigation
 
@@ -115,7 +116,7 @@ class _EnterYourCodeState extends State<EnterYourCode> {
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
-                      // Handle the navigation action here
+                      Get.to(()=>SelectLocationScreen());
                     },
                     child: CircleAvatar(
                       radius: 33.5,

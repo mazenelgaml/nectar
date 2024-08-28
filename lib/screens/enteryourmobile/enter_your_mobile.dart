@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // Import GetX if you're using it for navigation
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:nectar/screens/enteryourcode/enter_your_code.dart';
 
 import '../../widgets/background_widget/custom_background_widget.dart';
 
@@ -99,7 +100,7 @@ class _EnterYourMobileState extends State<EnterYourMobile> {
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
-                      // Handle the navigation action here
+                      Get.to(()=>EnterYourCode());
                     },
                     child: CircleAvatar(
                       radius: 33.5,

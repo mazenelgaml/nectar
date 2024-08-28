@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_utils/get_utils.dart';
+import 'package:nectar/screens/enteryourmobile/enter_your_mobile.dart';
 
 import '../../widgets/background_widget/custom_background_widget.dart';
+import '../logingscreen/loging_screen.dart';
 import '../widgets/custombottom/custom_button.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -220,7 +222,9 @@ class _SignupScreenState extends State<SignupScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(child: CustomButton(onPressed: () {  }, text: 'Sign up',)),
+                Center(child: CustomButton(onPressed: () {
+                  Get.to(()=>EnterYourMobile());
+                }, text: 'Sign up',)),
                 Text(
                   "Already have an account?  ",
                   style: TextStyle(
@@ -230,14 +234,19 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   textAlign: TextAlign.left,
                 ),
-                Text(
-                  "Log in ",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w800,
-                    fontSize: 15,
-                    color: Color(0xff53B175),
+                TextButton(
+                  onPressed: (){
+                    Get.to(()=>LogingScreen());
+                  },
+                  child: Text(
+                    "Log in ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 15,
+                      color: Color(0xff53B175),
+                    ),
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
               ],
             ),

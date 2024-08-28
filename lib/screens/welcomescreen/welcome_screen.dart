@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_utils/get_utils.dart';
 
+import '../sign_in_screen/sign_in_screen.dart';
 import '../widgets/custombottom/custom_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -59,7 +60,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 40,),
               Container(
-                  child: CustomButton(onPressed: (){}, text: 'Get Started',)),
+                  child: CustomButton(onPressed: (){Get.to(()=>SignInScreen());}, text: 'Get Started',)),
 
             ],
           ),
