@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nectar/screens/beverages_screen/beverages_screen.dart';
 import 'package:nectar/widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -221,37 +222,40 @@ class ExploreScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                width: Get.width*0.4,
-                height: Get.height*0.14,
-                decoration: BoxDecoration(
-                    color: Color(0xffB7DFF5).withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color:Color(0xffB7DFF5) )
-                ),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 15.0),
-                        child: Image(image: AssetImage("assets/images/Beverages.png")),
-                      ),
-                      Container(
-                        width: Get.width*0.31,
-                        height: Get.height*0.05,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("Beverages",
-                              style: TextStyle(
-                                  color: Color(0xff181725),
-                                  fontWeight: FontWeight.w900,fontSize: 16
-                              ),),
-                          ],
+              InkWell(
+                onTap: (){Get.to(()=>BeveragesScreen());},
+                child: Container(
+                  width: Get.width*0.4,
+                  height: Get.height*0.14,
+                  decoration: BoxDecoration(
+                      color: Color(0xffB7DFF5).withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color:Color(0xffB7DFF5) )
+                  ),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 15.0),
+                          child: Image(image: AssetImage("assets/images/Beverages.png")),
                         ),
-                      )
-                    ],
+                        Container(
+                          width: Get.width*0.31,
+                          height: Get.height*0.05,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text("Beverages",
+                                style: TextStyle(
+                                    color: Color(0xff181725),
+                                    fontWeight: FontWeight.w900,fontSize: 16
+                                ),),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               )
