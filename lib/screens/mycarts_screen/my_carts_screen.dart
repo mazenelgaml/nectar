@@ -176,17 +176,20 @@ class _MyCartsScreenState extends State<MyCartsScreen> {
                                         ),
                                       ],
                                     ),
-                                    Text(
-                                      '\$${_totalPrices[index].toStringAsFixed(2)}',
-                                      style: TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.w800,
-                                        color: Color(0xff181725),
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 8.0),
+                                      child: Text(
+                                        '\$${_totalPrices[index].toStringAsFixed(2)}',
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w800,
+                                          color: Color(0xff181725),
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 40),
+                                SizedBox(height: 10),
                                 Divider(
                                   color: Color(0xffE2E2E2), // Divider color
                                   thickness: 1,       // Thickness of the divider

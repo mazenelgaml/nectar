@@ -40,12 +40,13 @@ class FavoriteScreen extends StatelessWidget {
             child: ListView.builder(itemBuilder: (context,index){
               return Column(
                 children: [
+                  SizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 5.0,top: 10,bottom: 10),
-                        child: Image(image: AssetImage(controller.drinksPhotos[index]),fit: BoxFit.fill,width: 30.91,height: 54.9,),
+                        child: Image(image: AssetImage(controller.drinksPhotos[index]),height:55.69 ,width: 55.69,),
                       ),
                       Container(
 
@@ -78,9 +79,11 @@ class FavoriteScreen extends StatelessWidget {
                           IconButton(onPressed: (){},
                               icon: Icon(Icons.chevron_right))
                         ],
-                      )
+                      ),
+
                     ],
                   ),
+                  SizedBox(height: 10,),
                   Center(
                     child: Container(
                       width: Get.width*0.95,

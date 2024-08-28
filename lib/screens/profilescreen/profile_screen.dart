@@ -94,7 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 return Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 20),
+                      padding: const EdgeInsets.only(left: 20,bottom: 10,top: 10),
                       child: InkWell(
                         onTap: () {
                           print("22");

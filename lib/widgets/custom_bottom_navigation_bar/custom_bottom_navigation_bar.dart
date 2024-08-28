@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nectar/screens/explore/explore_screen.dart';
+import 'package:nectar/screens/favorite/favorite_screen.dart';
+import 'package:nectar/screens/home_Screen/home_screen.dart';
+import 'package:nectar/screens/mycarts_screen/my_carts_screen.dart';
 import 'package:nectar/screens/profilescreen/profile_screen.dart';
 class CustomBottomNavigationBar extends StatefulWidget {
  const CustomBottomNavigationBar({super.key,required this.selectedIndex  });
@@ -119,6 +122,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           }else if(index==1){
             Get.to(()=>ExploreScreen());
             setState(() {});
+          }else if(index==0){
+            Get.to(()=>HomeScreen());
+          }else if(index==2){
+            Get.to(()=>MyCartsScreen());
+          }else{
+            Get.to(()=>FavoriteScreen());
           }
           setState(() {});
         },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nectar/widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 
 import '../../widgets/Groceries_widget/groceries_widget.dart';
 import '../../widgets/best_selling_widget/best_selling_widget.dart';
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: CustomBottomNavigationBar(selectedIndex: 0,),
       body: Container(
         width: Get.width*0.97,
         child: SingleChildScrollView(
