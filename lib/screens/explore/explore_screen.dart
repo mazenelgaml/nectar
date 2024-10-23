@@ -99,7 +99,7 @@ class ExploreScreen extends StatelessWidget {
                       ),
                       Center(
                         child: Container(
-                          width: Get.width*0.22,
+                          width: Get.width*0.25,
                           child: Center(
                             child: Text("Cooking Oil ",
                               style: TextStyle(
@@ -122,7 +122,7 @@ class ExploreScreen extends StatelessWidget {
               ),
               Container(
                 width: Get.width*0.4,
-                height: Get.height*0.14,
+                height: Get.height*0.10,
                 decoration: BoxDecoration(
                     color: Color(0xffF7A593).withOpacity(0.2),
                     borderRadius: BorderRadius.circular(20),
@@ -171,7 +171,7 @@ class ExploreScreen extends StatelessWidget {
                         child: Image(image: AssetImage("assets/images/bakery.png")),
                       ),
                       Container(
-                        width: Get.width*0.31,
+                        width: Get.width*0.35,
                         height: Get.height*0.05,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
