@@ -3,7 +3,7 @@ class EndPoint {
   static String signIn = "/nectar/login";
   static String signUp = "/nectar/signUp";
   static String getUserDataEndPoint(id) {
-    return "user/get-user/$id";
+    return "/nectar/get/$id";
   }
 }
 

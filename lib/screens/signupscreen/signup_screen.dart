@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:nectar/screens/enteryourmobile/enter_your_mobile.dart';
 
+import '../../ui/auth/sign_up/sign_up_controller.dart';
 import '../../widgets/background_widget/custom_background_widget.dart';
 import '../logingscreen/loging_screen.dart';
 import '../widgets/custombottom/custom_button.dart';
@@ -21,6 +22,8 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return GetBuilder(init: SignUpController(),
+    builder: (SignUpController controller) {
     return Scaffold(
       body: CustomBackgroundWidget(
         page: Column(
@@ -82,6 +85,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       width: Get.width,
                       height: 78,
                       child: TextFormField(
+                        controller: controller.userNameController,
                         decoration: InputDecoration(
                           contentPadding:
                           EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -112,6 +116,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       width: Get.width,
                       height: 78,
                       child: TextFormField(
+                        controller: controller.emailController,
                         decoration: InputDecoration(
                           contentPadding:
                           EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -142,6 +147,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       width: Get.width,
                       height: 78,
                       child: TextFormField(
+                        controller: controller.passwordController,
                         obscureText: _isObscure,
                         decoration: InputDecoration(
                           contentPadding:
@@ -223,7 +229,7 @@ class _SignupScreenState extends State<SignupScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Center(child: CustomButton(onPressed: () {
-                  Get.to(()=>EnterYourMobile());
+                  controller.signUp(context);
                 }, text: 'Sign up',)),
                 Text(
                   "Already have an account?  ",
@@ -253,6 +259,6 @@ class _SignupScreenState extends State<SignupScreen> {
           ],
         ),
       ),
-    );
+    );});
   }
 }

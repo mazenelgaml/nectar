@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../ui/auth/get_user_data/get_user_data_controller.dart';
 import '../../widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -10,6 +11,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+
   final List<Map<String, String>> items = [
     {'image': 'assets/images/Orders icon.png', 'title': 'Order'},
     {'image': 'assets/images/My Details icon.png', 'title': 'My Details'},
@@ -26,6 +28,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    return GetBuilder(init: GetUserDataController(),
+    builder: (GetUserDataController controller) {
     return Scaffold(
       bottomNavigationBar: CustomBottomNavigationBar(selectedIndex: 4,),
       body: Column(
@@ -57,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Afsar Hossen ",
+                        controller.user?.username??"",
                         style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 20,
@@ -65,7 +70,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       Text(
-                        "Imshuvo97@gmail.com ",
+                        controller.user?.email??"",
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
@@ -193,6 +198,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           )
         ],
       ),
-    );
+    );});
   }
 }

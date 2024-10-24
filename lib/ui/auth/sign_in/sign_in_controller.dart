@@ -5,7 +5,15 @@ import 'package:get/get.dart';
 import 'package:nectar/models/error_model.dart';
 import 'package:nectar/screens/home_Screen/home_screen.dart';
 
+import '../../../models/sign_in_model.dart';
+import '../../../services/memory.dart';
+
 class SignInController extends GetxController{
+  @override
+  Future<void> onInit() async {
+    super.onInit();
+    await CacheHelper.init();
+  }
   var response;
   TextEditingController emailController=TextEditingController();
   TextEditingController passwordController=TextEditingController();
@@ -26,10 +34,11 @@ class SignInController extends GetxController{
       // Ensure successful response status
       if (response.statusCode == 200) {
         // Convert response data to ResponseModel
-        ResponseModel r = ResponseModel.fromJson(response.data);
+        SignInModel r = SignInModel.fromJson(response.data);
 
         // Display a success dialog
         if(r.message=="success"){
+          CacheHelper().saveData(key: "id", value: "${r.data?.id}");
         showDialog(
           context: context,
           builder: (BuildContext context) {
