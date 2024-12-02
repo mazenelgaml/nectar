@@ -8,6 +8,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< Updated upstream
       body: SingleChildScrollView(
         child:Container(
           width: Get.width,
@@ -21,6 +22,22 @@ class SignInScreen extends StatelessWidget {
                 height: Get.height*0.42,
                 decoration: const BoxDecoration(
                   image: DecorationImage(fit: BoxFit.fill,image: AssetImage("assets/images/signInPhoto.png"))
+=======
+      body: Container(
+        width: Get.width,
+        height: Get.height,
+        color: Color(0xffffffff),
+        child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: Get.width,
+                  height: Get.height*0.42,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(fit: BoxFit.fill,image: AssetImage("assets/images/signInPhoto.png"))
+                  ),
+>>>>>>> Stashed changes
                 ),
               ),
               Container(
@@ -40,6 +57,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+<<<<<<< Updated upstream
               ),
               Container(
                 height: Get.height*0.15,
@@ -79,6 +97,46 @@ class SignInScreen extends StatelessWidget {
                     ),
 
                   ],
+=======
+                Container(
+                  height: Get.height*0.15,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: Get.width*0.85,
+                        child: IntlPhoneField(
+                          showDropdownIcon: false,
+                            disableLengthCheck: true,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 25, horizontal: 12),
+                              hintText: "    Enter your mobile number",
+                              hintStyle: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                                color: Color(0xff303030),
+                              ),
+                              border: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.transparent),
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.grey), // Customize the color as needed
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.blue), // Customize the color as needed
+                              ),
+                            ),
+                            initialCountryCode: 'IN',
+                            onChanged: (phone) {
+                              print(phone.completeNumber);
+                            },
+                          ),
+                      ),
+
+                    ],
+                  ),
+>>>>>>> Stashed changes
                 ),
               ),
               Center(
@@ -136,9 +194,65 @@ class SignInScreen extends StatelessWidget {
                         )
                     ),),
                 ),
+<<<<<<< Updated upstream
               )
             ],
           ),
+=======
+                Container(
+                  height: Get.height*0.1,
+                  child: Center(
+                    child: ElevatedButton(onPressed: (){}, child:
+                    Row(children: [
+                      Image(image: AssetImage("assets/images/facebookIcon.png"),width: 35,height: 40,)
+                      ,Container(
+                        width: Get.width*0.6,
+                        child: Center(child: Text("Continue with Facebook",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                              color: Color(0xffFCFCFC)
+                          ),)),
+                      )],),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xff4A66AC),
+                          fixedSize: Size(Get.width*0.9, Get.height*0.08),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(19)
+                          )
+                      ),),
+                  ),
+                ),
+                Container(
+                  height: Get.height*0.1,
+                  child: Center(
+                    child: ElevatedButton(onPressed: (){
+                      Get.to(()=>LogingScreen());
+                    }, child:
+                    Row(children: [
+                      Image(image: AssetImage("assets/images/email-png-high-resolution-web-icons-png-27.png"),width: 45,height: 45,)
+                      ,Container(
+                        width: Get.width*0.6,
+                        child: Center(child: Text("Continue with Email",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                              color: Color(0xffFCFCFC)
+                          ),)),
+                      )],),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xff808080),
+                          fixedSize: Size(Get.width*0.9, Get.height*0.08),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(19)
+                          )
+                      ),),
+                  ),
+                )
+              ],
+            ),
+
+>>>>>>> Stashed changes
         ),
       ),
     );

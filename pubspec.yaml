@@ -33,7 +33,21 @@ dependencies:
   cupertino_icons: ^1.0.6
   get: ^4.6.5
   intl_phone_field: ^3.1.0
+<<<<<<< Updated upstream
 
+=======
+  dropdown_textfield: ^1.2.0
+  splash_view: ^2.0.1
+  firebase_core: ^3.4.0
+  dio: ^5.6.0
+  shared_preferences: ^2.3.2
+  path: ^1.8.0
+  emoji_picker_flutter: ^3.1.0
+  image_picker: ^0.8.8+6
+  permission_handler: ^10.2.0
+  file_picker: ^5.2.4
+  intl: ^0.18.0
+>>>>>>> Stashed changes
 dev_dependencies:
   flutter_test:
     sdk: flutter

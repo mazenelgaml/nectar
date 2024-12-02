@@ -3,6 +3,13 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+<<<<<<< Updated upstream
+=======
+  emoji_picker_flutter
+  file_selector_windows
+  firebase_core
+  permission_handler_windows
+>>>>>>> Stashed changes
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
